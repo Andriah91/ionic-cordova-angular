@@ -1,0 +1,30 @@
+<ion-view view-title="Clients">
+  <ion-content>
+    <div class="scroll">
+      <div class="list card">
+        <div class="item">
+          # {{client.id || 'undefined'}}
+        </div>
+        <form name="formulaire" ng-submit="save()">
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Name</span>
+            <input type="text" placeholder="Name" ng-model="client.name" name="name" required>
+            <span class="assertive" ng-show="formulaire.name.$error.required && formulaire.name.$dirty">
+              This is a required field
+            </span>
+          </label>
+          <div class="item">
+            <div>
+              <button class="button button-full button-positive" ng-disabled="formulaire.$invalid">
+                <!-- no content -->Save
+              </button>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

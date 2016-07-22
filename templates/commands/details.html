@@ -1,0 +1,44 @@
+<ion-view view-title="Command">
+    <ion-content>
+        <div class="scroll">
+
+            <div class="list card">
+                <div class="item">
+                    # {{command.id}}
+                </div>
+                <div class="item item-body">
+                    <div class="row">
+                        <div class="col">
+                            <p> Client :</p>
+                            <h2> {{command.id_client}}</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <p> Product :</p>
+                            <h2> {{command.id_product}}</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <p> Quantity :</p>
+                            <h2> {{command.quantity}}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="bubble bubble-bottom">
+        <button class="button button-balanced ion-compose"
+                ng-click="edit()">
+            <!-- no content -->
+        </button>
+        <button class="button button-assertive ion-trash-b"
+                ng-click="delete()">
+            <!-- no content -->
+        </button>
+    </div>
+</ion-view>

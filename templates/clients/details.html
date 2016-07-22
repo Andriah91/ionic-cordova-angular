@@ -1,0 +1,30 @@
+<ion-view view-title="Clients">
+  <ion-content>
+      <div class="scroll">
+
+      <div class="list card">
+        <div class="item">
+          # {{client.id}}
+        </div>
+        <div class="item item-body">
+          <div class="row">
+            <div class="col">
+              <p> Name :</p>
+              <h2> {{client.name}}</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <div class="bubble bubble-bottom">
+      <button class="button ion-compose"
+              ng-click="edit()">
+        <!-- no content -->
+      </button>
+      <button class="button ion-trash-b"
+              ng-click="delete()">
+        <!-- no content -->
+      </button>
+  </div>
+</ion-view>

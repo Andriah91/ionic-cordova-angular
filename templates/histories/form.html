@@ -1,0 +1,70 @@
+<ion-view view-title="History">
+  <ion-content>
+    <div class="scroll">
+      <div class="list card">
+        <div class="item">
+          # {{history.id || 'undefined'}}
+        </div>
+        <!--TODO -->
+        <div>
+          <form name="formulaire" ng-submit="save()">
+          <div class="item">
+            <div> <!--watch < 1 && $peristine -->
+              <button class="button button-full button-positive" ng-disabled="products.length < 1">
+                <!-- no content -->Save
+              </button>
+            </div>
+          </div>
+
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Client :
+            </div>
+            <select name="select" ng-model="selectedClient"
+                    ng-options="client.id as client.name for client in clients">
+            </select>
+          </label>
+          <!--client -->
+
+          <!--chosen product -->
+            <div class="item">
+                products: [{{products.length}}]
+            </div>
+            <ion-list>
+              <ion-item class="item" ng-repeat="product in products" ng-click="remove(product)">
+                <div>
+                  <p>{{product.designation}}</p>
+                  <p>{{product.price}}</p>
+                </div>
+              </ion-item>
+            </ion-list>
+          </form>
+          </div>
+          <!--product search //TODO: add div to hide if products > 3 -->
+        <div ng-hide="products.length == 3">
+          <div class="item">
+            <div class="list list-inset padding-bottom">
+              <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="query">
+              </label>
+            </div>
+          </div>
+          <!--remaining products -->
+          <ion-list>
+            <div class="item">
+              Available products [{{productsOff.length}}]
+            </div>
+            <ion-item class="item" ng-repeat="product in productsOff | filter:query" ng-click="move(product)">
+              <div>
+                <p>{{product.designation}}</p>
+                <p>{{product.price}}</p>
+              </div>
+            </ion-item>
+          </ion-list>
+        </div>
+        </div>
+      </div>
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="Commands">
+    <ion-content>
+        <div>
+            <div class="list list-inset padding-bottom">
+                <label class="item item-input">
+                    <i class="icon ion-search placeholder-icon"></i>
+                    <input type="text" placeholder="Search" ng-model="query">
+                </label>
+            </div>
+        </div>
+        <ion-list>
+            <ion-item ng-repeat="command in commands | filter:query" href="#/app/commands/{{command.id}}">
+                <h2>{{command.id_client}}</h2>
+                <p> {{command.id_product}}
+                    <a class="icon ion-arrow-right-a"> </a>
+                    {{command.quantity}}
+                </p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <div class="bubble bubble-bottom">
+        <button class="button button-positive ion-plus" ng-click="add()">
+            <!-- no content -->
+        </button>
+    </div>
+</ion-view>

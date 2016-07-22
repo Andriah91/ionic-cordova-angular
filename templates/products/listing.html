@@ -1,0 +1,24 @@
+<ion-view view-title="Products">
+  <ion-content>
+      <div>
+          <div class="list list-inset padding-bottom">
+              <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="text" placeholder="Search" ng-model="query">
+              </label>
+          </div>
+      </div>
+      <ion-list>
+      <ion-item ng-repeat="product in products | filter:query" href="#/app/products/{{product.id}}">
+        <h2> {{product.designation}}</h2>
+        <p>{{product.price}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+    <div class="bubble bubble-bottom">
+        <button class="button button-positive ion-plus" ng-click="add()">
+            <!-- no content -->
+        </button>
+    </div>
+</ion-view>

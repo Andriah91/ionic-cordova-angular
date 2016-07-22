@@ -1,0 +1,43 @@
+<ion-view view-title="Product">
+  <ion-content>
+    <div class="scroll">
+      <div class="list card">
+        <div class="item">
+          # {{product.id || 'undefined'}}
+        </div>
+        <form name="formulaire" ng-submit="save()">
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Designation</span>
+            <input type="text" placeholder="Designation" ng-model="product.designation" name="designation" required>
+            <span class="assertive" ng-show="formulaire.designation.$error.required && formulaire.designation.$dirty">
+                This is a required field
+            </span>
+          </label>
+
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Price</span>
+            <input type="number" placeholder="Price" ng-model="product.price" name="price" required>
+            <span class="assertive" ng-show="formulaire.price.$error.required && formulaire.price.$dirty">
+                This is a required field
+            </span>
+            <!-- TODO: error:date_format -->
+            <span class="assertive" ng-show="formulaire.price.$error.number && formulaire.price.$dirty">
+                This must be a number
+            </span>
+          </label>
+
+          <div class="item">
+            <div>
+              <button class="button button-full button-positive" ng-disabled="formulaire.$invalid">
+                <!-- no content -->Save
+              </button>
+            </div>
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

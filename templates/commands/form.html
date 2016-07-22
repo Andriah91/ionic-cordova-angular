@@ -1,0 +1,51 @@
+<ion-view view-title="Command">
+    <ion-content>
+        <div class="scroll">
+            <div class="list card">
+                <div class="item">
+                    # {{command.id || 'undefined'}}
+                </div>
+                <form name="formulaire" ng-submit="save()">
+                    <div class="list">
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Client</span>
+                            <input type="text" placeholder="Client" ng-model="command.id_client" name="id_client" required>
+                            <span class="assertive" ng-show="formulaire.quantity.$error.required && formulaire.quantity.$dirty">
+                                This is a required field
+                            </span>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Product</span>
+                            <input type="text" placeholder="Product" ng-model="command.id_product" name="id_product" required>
+                            <span class="assertive" ng-show="formulaire.quantity.$error.required && formulaire.quantity.$dirty">
+                                This is a required field
+                            </span>
+                        </label>
+
+                        <label class="item item-input item-floating-label">
+                            <span class="input-label">Quantity</span>
+                            <input type="number" placeholder="Quantity" ng-model="command.quantity" name="quantity" required>
+                            <span class="assertive" ng-show="formulaire.quantity.$error.required && formulaire.quantity.$dirty">
+                                This is a required field
+                            </span>
+                            <!-- TODO: error:date_format -->
+                            <span class="assertive" ng-show="formulaire.quantity.$error.number && formulaire.quantity.$dirty">
+                                This must be a number
+                            </span>
+                        </label>
+
+                        <div class="item">
+                            <div>
+                                <button class="button button-full button-positive" ng-disabled="formulaire.$invalid">
+                                    <!-- no content -->Save
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

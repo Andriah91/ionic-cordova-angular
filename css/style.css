@@ -1,0 +1,20 @@
+/* Empty. Add your own CSS if you like */
+
+
+.bubble-container{
+    position: relative;
+}
+
+.bubble{
+    position: absolute;
+    z-index: 9;
+}
+
+.bubble-bottom{
+    bottom: 5%;
+    right:  5%;
+}
+
+.align-right{
+    text-align: right;
+}
